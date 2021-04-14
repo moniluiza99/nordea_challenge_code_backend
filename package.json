@@ -1,0 +1,24 @@
+{
+  "name": "nordea_challenge_code_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moniluiza99/nordea_challenge_code_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moniluiza99/nordea_challenge_code_backend/issues"
+  },
+  "homepage": "https://github.com/moniluiza99/nordea_challenge_code_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
