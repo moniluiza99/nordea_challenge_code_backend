@@ -1,16 +1,31 @@
-console.log("Triangle")
-const { query } = require('express')
 const express = require('express')
+const areTwoSidesSame = require('./helpers').areTwoSidesSame
+const doesTriangleExist = require('./helpers').doesTriangleExist;
 const app = express()
 const port = 8000
 
 app.get('/', (req, res) => {
-  let {valueA, valueB, valueC} = req.query; console.log(req);
-  if(valueA === valueB && valueB ===valueC){
-      res.json({triangleType:'equilateral'})
-  }else{
-      res.json({triangleType:'scalene'})
+  let {valueA, valueB, valueC} = req.query;
+  valueA = parseInt(valueA)
+  valueB = parseInt(valueB)
+  valueC = parseInt(valueC)
+  if(!doesTriangleExist(valueA, valueB, valueC)){
+    res.json({triangleType:'not possible'});
+    return;
   }
+  if(valueA === valueB && valueB ===valueC){
+     res.json({triangleType:'equilateral'})
+     return;
+  }
+  try{
+  if(areTwoSidesSame(valueA, valueB, valueC)){
+    res.json({triangleType: 'isoceles'})
+    return;
+  }
+  }catch(e){
+    console.log(e)
+  }
+  res.json({triangleType:'scalene'})
 
 })
 
