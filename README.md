@@ -1,6 +1,6 @@
 # Nordea conding challenge backend
 ## Build it with
-- JavaScript
+- Node
 
 
 ## To run
